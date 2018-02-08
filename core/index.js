@@ -52,6 +52,7 @@ const twitterEmbedComponent = (me) => {
             }
 
             if (this.isLoaded && !this.isAvailable && this.$props.errorMessage) {
+                this.$emit('tweet-error');
                 const $errorMsg = h('div', { class: this.$props.errorMessageClass }, this.$props.errorMessage)
                 return h('div', [$errorMsg])
             }
