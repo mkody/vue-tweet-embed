@@ -56,6 +56,7 @@ var defaultProps = {
             }
 
             if (this.isLoaded && !this.isAvailable && this.$props.errorMessage) {
+                this.$emit('tweet-error');
                 var $errorMsg = h('div', { class: this.$props.errorMessageClass }, this.$props.errorMessage);
                 return h('div', [$errorMsg]);
             }
