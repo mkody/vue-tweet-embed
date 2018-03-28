@@ -48,6 +48,10 @@ var defaultProps = {
             }).then(function (data) {
                 _this.isAvailable = data !== undefined;
                 _this.isLoaded = true;
+                _this.$emit('tweet-loaded', {
+                    isLoaded: _this.isLoaded, 
+                    isAvailable: _this.isAvailable
+                });
             });
         },
         render: function render(h) {
