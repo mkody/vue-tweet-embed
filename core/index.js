@@ -44,6 +44,10 @@ const twitterEmbedComponent = (me) => {
             .then(data => {
                 this.isAvailable = (data !== undefined)
                 this.isLoaded = true
+                this.$emit('tweet-loaded', {
+                    isLoaded: this.isLoaded, 
+                    isAvailable: this.isAvailable
+                });
             })
         },
         render (h) {
