@@ -75,7 +75,7 @@ test('Should inject twitter embed script if none is given', t => {
     const Ctor = Vue.extend(Tweet)
     new Ctor().$mount()
 
-    const $script = document.querySelector('script[src="//platform.twitter.com/widgets.js"]')
+    const $script = document.querySelector('script[src="https://platform.twitter.com/widgets.js"]')
     t.true($script !== null)
 })
 
@@ -89,7 +89,7 @@ test('Should not inject more than one script par page', t => {
     const Ctor = Vue.extend(TweetPage)
     new Ctor().$mount()
 
-    const $scripts = document.querySelectorAll('script[src="//platform.twitter.com/widgets.js"]')
+    const $scripts = document.querySelectorAll('script[src="https://platform.twitter.com/widgets.js"]')
     t.is($scripts.length, 1)
 })
 

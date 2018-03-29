@@ -43,13 +43,13 @@ var defaultProps = {
 
             var params = this.sourceType ? { sourceType: this.sourceType, screenName: this.id } : this.id;
 
-            Promise.resolve(window.twttr ? window.twttr : addPlatformScript('//platform.twitter.com/widgets.js')).then(function (twttr) {
+            Promise.resolve(window.twttr ? window.twttr : addPlatformScript('https://platform.twitter.com/widgets.js')).then(function (twttr) {
                 return me.embedComponent(twttr, params, _this.$el, _this.options);
             }).then(function (data) {
                 _this.isAvailable = data !== undefined;
                 _this.isLoaded = true;
                 _this.$emit('tweet-loaded', {
-                    isLoaded: _this.isLoaded, 
+                    isLoaded: _this.isLoaded,
                     isAvailable: _this.isAvailable
                 });
             });
